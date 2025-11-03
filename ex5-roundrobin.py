@@ -18,7 +18,7 @@ fila = []
 while True: 
   # Adição na fila
   for p in processos: 
-    if p["chegada"] <= tempo and p["execucao"] > 0 and p not in fila:
+    if p['chegada'] <= tempo and p['execucao'] > 0 and p not in fila:
       fila.append(p)
 
   # Execução do quantum
@@ -33,7 +33,7 @@ while True:
 
   # Registro do tempo de resposta
   if fila[0]['resposta'] == None:
-    fila[0]['resposta'] = tempo
+    fila[0]['resposta'] = tempo - fila[0]['chegada']
 
   fila[0]['execucao'] -= 1
 
@@ -54,7 +54,7 @@ while True:
   if p_finalizados == len(processos):
     break
       
-TMR = sum(p["resposta"] for p in processos) / len(processos)
+TMR = sum(p['resposta'] for p in processos) / len(processos)
 
 print(f'\nOrdem de execução: {ordem_execucao}')
 for p in processos:
