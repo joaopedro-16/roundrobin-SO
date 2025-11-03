@@ -1,5 +1,6 @@
 # Algoritmo para simulação de escalonamento de processos
 # Round Robin
+# Por João Pedro Sales e Vinicius Menezes
 
 processos = [
   {"nome": "P1", "chegada": 0, "execucao": 5, "resposta": None, "fim": None},
@@ -60,3 +61,4 @@ print(f'\nOrdem de execução: {ordem_execucao}')
 for p in processos:
   print(f'Tempo de resposta {p["nome"]}: {p["resposta"]}')
 print(f'Tempo médio de resposta: {round(TMR, 2)}\n')
+
